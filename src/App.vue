@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <Form v-model="formInput" />
+      <Form />
       <List />
     </div>
   </div>
@@ -13,12 +13,7 @@
 
   export default {
     name: 'App',
-
     components: { Form, List },
-
-    data: () => ({
-      formInput: '',
-    }),
   }
 </script>
 
@@ -54,5 +49,7 @@
   .wrapper {
     width: 100%;
     max-width: 500px;
+    padding: 20px 0;
+    overflow-y: auto;
   }
 </style>
