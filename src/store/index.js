@@ -25,19 +25,14 @@ export default new Vuex.Store({
     UPDATE_TODO(state, payload) {
       const todoIndex = state.todos.findIndex(todo => todo.id === payload.id)
       state.todos[todoIndex].title = payload.title
-
-      console.log(state.todos[todoIndex].title, state.todos[todoIndex])
     },
 
     DELETE_TODO(state, id) {
       const todoIndex = state.todos.findIndex(todo => todo.id === id)
-      const newTodosArray = [...this.state.todos]
 
       if (todoIndex > -1) {
-        newTodosArray.splice(todoIndex, 1)
+        state.todos.splice(todoIndex, 1)
       }
-
-      this.state.todos = newTodosArray
     },
   },
   actions: {},
